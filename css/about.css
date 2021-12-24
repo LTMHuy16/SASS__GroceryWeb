@@ -1,0 +1,76 @@
+/*=======================
+  VARIABLES
+========================*/
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.about .image {
+  flex: 1 1 40rem;
+}
+.about .image img {
+  width: 100%;
+}
+.about .content {
+  flex: 1 1 40rem;
+}
+.about .content span {
+  color: #bac34e;
+  font-size: 2.5rem;
+}
+.about .content h3 {
+  padding-top: 0.5rem;
+  color: #222;
+  font-size: 3rem;
+}
+.about .content p {
+  padding: 1rem 0;
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+.gallery .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 1.5rem;
+}
+.gallery .box-container .box {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+.gallery .box-container .box:hover img {
+  transform: scale(1.1);
+}
+.gallery .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.gallery .box-container .box:hover .icons {
+  bottom: 0;
+  transition: all 0.2s linear;
+}
+.gallery .box-container .box .icons {
+  position: absolute;
+  bottom: -6rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1.5rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.gallery .box-container .box .icons a {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 1.5rem;
+}
+.gallery .box-container .box .icons a:hover {
+  color: #bac34e;
+}
+
+/*# sourceMappingURL=about.css.map */

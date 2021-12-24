@@ -1,0 +1,108 @@
+@import 'utilities';
+
+.category {
+
+  .box-container {
+    @include grid(16rem);
+    padding: 4rem 0;
+
+    .box {
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+        height: 15rem;
+      }
+  
+      h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: $light-color;
+        font-weight: 500;
+      }
+  
+      &:hover h3 {
+        color: $green;
+      }
+    }
+  }
+}
+
+.products .box-container {
+  @include grid(25rem);
+
+  .box {
+    position: relative;
+    background-color: $light-bg;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    &:hover .icons {
+      top: 0;
+      transition: all 0.3s linear;
+    }
+
+    .icons {
+      position: absolute;
+      top: -105%;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 30rem;
+      background-color: rgba(243, 243, 243, .8);
+      gap: 1rem;
+
+      a {
+        font-size: 2rem;
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        background-color: $white;
+        color: $light-color;
+        box-shadow: $box-shadow;
+
+        &:hover {
+          background-color: $green;
+          color: $white;
+
+        }
+      }
+    }
+
+    .image {
+      height: 30rem;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      padding: 1.5rem;
+
+      h3 {
+        color: $black;
+        font-size: 2rem;
+      }
+
+      .price {
+        font-size: 2rem;
+        color: $black;
+        padding: 1rem 0;
+      }
+
+      .stars i {
+        font-size: 1.7rem;
+        color: $green;
+        cursor: pointer;
+      }
+    }
+  }
+}

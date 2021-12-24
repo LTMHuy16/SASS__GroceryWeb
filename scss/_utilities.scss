@@ -1,0 +1,18 @@
+/*=======================
+  VARIABLES
+========================*/
+$green: #bac34e;
+$black: #222;
+$white: #fff;
+$light-color: #666;
+$light-bg: #f3f3f3;
+$border: .1rem solid rgba(0,0,0,.1);
+$box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+$z-fixed: 100;
+
+
+@mixin grid ($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}

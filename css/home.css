@@ -1,0 +1,153 @@
+/*=======================
+  VARIABLES
+========================*/
+@keyframes fadeLeft {
+  40% {
+    opacity: 0.6;
+    transform: translateX(2rem);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.home {
+  position: relative;
+  padding-top: 14rem;
+  background: url(../image/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home .slide-container .slide {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.home .slide-container .slide.active {
+  display: flex;
+}
+.home .slide-container .slide .content {
+  flex-basis: 40rem;
+  animation: fadeLeft 0.4s linear backwards;
+}
+.home .slide-container .slide .content span {
+  color: #666;
+  font-size: 2.5rem;
+}
+.home .slide-container .slide .content h3 {
+  font-size: 6rem;
+  color: #222;
+  padding: 0.5rem 0;
+}
+.home .slide-container .slide .image {
+  flex-basis: 40rem;
+}
+.home .slide-container .slide .image img {
+  width: 100%;
+  animation: fadeUp 0.4s linear;
+}
+.home #next-slide,
+.home #prev-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  color: black;
+  background-color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.home #next-slide:hover,
+.home #prev-slide:hover {
+  background-color: #bac34e;
+  color: #fff;
+}
+.home #prev-slide {
+  left: 2rem;
+}
+.home #next-slide {
+  right: 2rem;
+}
+
+.banner-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+}
+.banner-container .banner {
+  position: relative;
+  height: 25rem;
+  overflow: hidden;
+}
+.banner-container .banner:hover img {
+  transform: scale(1.1);
+}
+.banner-container .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-container .banner .content {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+.banner-container .banner .content span {
+  color: #666;
+  font-size: 1.5rem;
+}
+.banner-container .banner .content h3 {
+  display: block;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  color: #222;
+}
+.banner-container .banner .content .btn {
+  padding: 0.8rem 2.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .home #next-slide,
+.home #prev-slide {
+    transform: translateY(0);
+    top: 88%;
+  }
+
+  .home #prev-slide {
+    left: auto;
+    right: 8rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home .slide-container .slide .content h3 {
+    font-size: 4rem;
+  }
+
+  .home .slide .image {
+    margin: 3rem;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

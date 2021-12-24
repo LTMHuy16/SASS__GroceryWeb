@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import '../scss/utilities';
+
+
+/*=======================
+  RESET CSS
+========================*/
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+*,*:before,*:after {
+box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button{
+  outline: none;
+}
+
+input{
+  line-height: normal;
+}
+
+label,
+button{
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*=======================
+  USABLE CLASSES
+========================*/
+section {
+  padding: 3rem 9%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  background-color: $green;
+  color: $white;
+  font-size: 1.7rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $black;
+  }
+}
+
+#menu-btn {
+  display: none;
+}
+
+.heading {
+  background: url(../image/heading-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
+
+  h1 {
+    color: $black;
+    font-size: 4rem;
+  }
+
+  p {
+    padding-top: 1rem;
+    font-size: 2rem;
+    color: $light-color;
+
+    a {
+      color: $black;
+      padding-right: 0.5rem;
+      
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: $border;
+  margin-bottom: 3rem;
+  color: $black;
+  font-size: 2.5rem;
+
+  span {
+    color: $green;
+    padding-left: 0.7rem;
+  }
+
+  a {
+    margin-left: auto;
+    color: $light-color;
+    font-size: 1.5rem;
+    
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+
+
+
+/*=======================
+  HEADER AND FOOTER
+========================*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 9%;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: $black;
+
+    i {
+      color: $green;
+      padding: .5rem;
+    }
+  }
+
+  .navbar {
+    ul {
+      display: flex;
+
+      a {
+        font-size: 1.7rem;
+        color: $light-color;
+        margin: 0 1rem;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: $light-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .search-form {
+    position: absolute;
+    top: -115%;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    width: 50rem;
+    height: 5.5rem;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    background-color: $white;
+    transition: .2s linear;
+
+    &.active {
+      top: 115%;
+    }
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 0 1.2rem;
+      font-size: 1.6rem;
+      color: $black;
+    }
+
+    label {
+      font-size: 2.5rem;
+      color: $light-color;
+      margin: 0 1rem;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  .shopping-cart {
+    position: absolute;
+    top: 115%;
+    right: -105%;
+    padding: 2rem;
+    width: 35rem;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    background-color: $white;
+    transition: .4s ease;
+
+    &.active {
+      right: 2rem;
+    }
+
+    .box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+
+
+      .fa-times {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        color: $light-color;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      img {
+        height: 10rem;
+      }
+
+      .content {
+        
+        h3 {
+          font-size: 1.7rem;
+          padding-bottom: 0.5rem;
+          color: $black;
+        }
+
+        span {
+          font-size: 1.5rem;
+          color: $light-color;
+
+          &.multiply {
+            margin: 0 0.5rem;
+          }
+        }
+      }
+    }
+
+    .total {
+      color: $light-color;
+      font-size: 2.2rem;
+      text-align: center;
+
+      span {
+        color: $black;
+      }
+    }
+
+    .btn {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .login-form {
+    position: absolute;
+    top: 115%;
+    right: -105%;
+    padding: 2rem;
+    width: 35rem;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    background-color: $white;
+    transition: .4s ease;
+
+    &.active {
+      right: 2rem;
+    }
+
+    h3 {
+      color: $black;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 1rem 1.1rem;
+      border: $border;
+      margin: 0.7rem 0;
+      color: $black;
+      font-size: 1.5rem;
+
+      &:focus {
+        border-color: $green;
+      }
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      margin: 0.7rem 0;
+      gap: .5rem;
+
+      input {
+        cursor: pointer;
+      }
+
+      label {
+        font-size: 1.4rem;
+        color: $light-color;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    p {
+      color: $light-color;
+      padding-top: .7rem;
+      font-size: 1.4rem;
+
+      a {
+        color: $green;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+
+.footer {
+  padding: 3rem 9%;
+  background-color: $light-bg;
+
+  .box-container {
+    @include grid(25rem);
+
+    .box {
+
+      h3 {
+        padding: 1rem 0;
+        color: $black;
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: $light-color;
+        padding-bottom: .5rem;
+      }
+
+      a {
+        display: block;
+        padding: 1rem 0;
+        color: $light-color;
+        font-size: 1.6rem;
+
+        &:hover {
+          color: $green;
+
+          i {
+            padding-right: 2rem;
+            transition: .15s linear;
+          }
+        }
+
+        i {
+          padding-right: 0.5rem;
+          color: $green;
+        }
+      }
+
+      form {
+        
+        input[type="email"] {
+          padding: 1rem 1.2rem;
+          margin: 1rem 0;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $black;
+        }
+      }
+
+      .payment {
+        margin-top: 2rem;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+.credit {
+  padding: 1.5rem 1rem;
+  color: $white;
+  background-color: $green;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+
+
+
+
+
+/*=======================
+  RESPONSIVE
+========================*/
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+
+  .footer {
+    padding: 3rem 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .header {
+
+    .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      border-top: $border;
+      border-bottom: $border;
+      clip-path: polygon(0 0, 100% 0, 100% 0,0 0);
+      transition: .2s linear;
+
+      &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%);
+      }
+
+      ul {
+        flex-direction: column;
+
+        a {
+          display: block;
+          padding: 1.5rem;
+          margin: 1.5rem;
+          background-color: $light-bg;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .search-form {
+      right: 0;
+      width: 100%;
+      border-radius: 0;
+
+      &.active {
+        top: 99%;
+        border-top: $border;
+        border-bottom: $border;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
